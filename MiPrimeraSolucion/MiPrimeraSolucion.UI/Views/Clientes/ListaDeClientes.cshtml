@@ -1,0 +1,68 @@
+@model IEnumerable<MiPrimeraSolucion.Abstracciones.ModelosParaUI.Clientes.ClientesDto>
+
+@{
+    ViewBag.Title = "Lista de Clientes";
+}
+
+<h2>Lista de Clientes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AgregarCliente")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.identificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.primerApellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.segundoApellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>Acciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.identificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.primerApellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.segundoApellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditarCliente", new { id=item.identificacion }) |
+            @Html.ActionLink("Details", "Detalles", new { id=item.identificacion }) |
+            @Html.ActionLink("Delete", "Eliminar", new { id=item.identificacion })
+        </td>
+    </tr>
+}
+</table>

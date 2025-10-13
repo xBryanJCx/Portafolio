@@ -42,20 +42,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoADatos\Clientes\ObtenerListaDeClientes\IObtenerListaDeClientesAD.cs" />
     <Compile Include="AccesoADatos\Inventario\EditarRepuesto\IEditarRepuestoAD.cs" />
     <Compile Include="AccesoADatos\Inventario\ObtenerListaDeRepuestos\IObtenerListaDeRepuestosAD.cs" />
     <Compile Include="AccesoADatos\Inventario\ObtenerRepuestoPorId\IObtenerRepuestoPorIdAD.cs" />
     <Compile Include="AccesoADatos\Inventario\RegistrarRepuesto\IRegistrarRepuestoAD.cs" />
+    <Compile Include="LogicaDeNegocio\Clientes\EditarCliente\IEditarClienteLN.cs" />
+    <Compile Include="LogicaDeNegocio\Clientes\ObtenerClientePorId\IObtenerClientePorIdLN.cs" />
+    <Compile Include="LogicaDeNegocio\Clientes\ObtenerListaDeClientes\IObtenerListaDeClientesLN.cs" />
+    <Compile Include="LogicaDeNegocio\Clientes\RegistrarCliente\IRegistrarClienteLN.cs" />
     <Compile Include="LogicaDeNegocio\Comunes\GestorDeFechas\IFechaLN.cs" />
     <Compile Include="LogicaDeNegocio\Inventario\EditarRepuesto\IEditarRepuestoLN.cs" />
     <Compile Include="LogicaDeNegocio\Inventario\ObtenerListaDeRepuestos\IObtenerListaDeRepuestosLN.cs" />
     <Compile Include="LogicaDeNegocio\Inventario\ObtenerRepuestoPorId\IObtenerRepuestoPorIdLN.cs" />
     <Compile Include="LogicaDeNegocio\Inventario\RegistrarRepuesto\IRegistrarRepuestoLN.cs" />
+    <Compile Include="ModelosParaUI\Clientes\ClientesDto.cs" />
     <Compile Include="ModelosParaUI\Inventario\InventarioDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ModelosParaUI\Clientes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

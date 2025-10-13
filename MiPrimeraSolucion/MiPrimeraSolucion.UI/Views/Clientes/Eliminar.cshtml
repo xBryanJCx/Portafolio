@@ -1,0 +1,65 @@
+@model MiPrimeraSolucion.Abstracciones.ModelosParaUI.Clientes.ClientesDto
+
+@{
+    ViewBag.Title = "Eliminar Cliente";
+}
+
+<h2>Eliminar Cliente</h2>
+
+<h3>¿Está seguro que desea eliminar este cliente?</h3>
+<div>
+    <h4>Información del Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.identificacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.identificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.primerApellido)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.primerApellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.segundoApellido)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.segundoApellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.correo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.correo)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            @Html.ActionLink("Volver a la Lista", "ListaDeClientes", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

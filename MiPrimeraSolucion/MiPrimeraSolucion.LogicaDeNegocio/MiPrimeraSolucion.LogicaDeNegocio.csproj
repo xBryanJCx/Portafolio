@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clientes\EditarCliente\EditarClienteLN.cs" />
+    <Compile Include="Clientes\ObtenerClientePorId\ObtenerClientePorIdLN.cs" />
+    <Compile Include="Clientes\ObtenerListaDeClientes\ObtenerListaDeClientesLN.cs" />
+    <Compile Include="Clientes\RegistrarCliente\RegistrarClienteLN.cs" />
     <Compile Include="Comunes\GestorDeFechas\FechaLN.cs" />
     <Compile Include="Inventario\EditarRepuesto\EditarRepuestoLN.cs" />
     <Compile Include="Inventario\ObtenerListaDeRepuestos\ObtenerListaDeRepuestosLN.cs" />
