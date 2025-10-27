@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A39C80B5-F275-4B2C-AF9B-F360CE8B4704}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BancoLosPatitos.Abstracciones</RootNamespace>
+    <AssemblyName>BancoLosPatitos.Abstracciones</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoADatos\Cajas\EditarCaja\IEditarCaja.cs" />
+    <Compile Include="AccesoADatos\Cajas\ObtenerCajaPorTelefono\IObtenerCajaPorTelefonoDA.cs" />
+    <Compile Include="AccesoADatos\Cajas\ObtenerListaDeCajasPorComercio\IObtenerListaDeCajasPorComercioDA.cs" />
+    <Compile Include="AccesoADatos\Cajas\ObtenerCajaPorId\IObtenerCajaPorIdDA.cs" />
+    <Compile Include="AccesoADatos\Cajas\RegistrarCaja\IRegistrarCajaDA.cs" />
+    <Compile Include="AccesoADatos\Comercios\EditarComercio\IEditarComercioDA.cs" />
+    <Compile Include="AccesoADatos\Comercios\ObtenerComercioPorId\IObtenerComercioPorIdDA.cs" />
+    <Compile Include="AccesoADatos\Comercios\ObtenerListaDeComercios\IObtenerListaDeComerciosDA.cs" />
+    <Compile Include="AccesoADatos\Comercios\RegistrarComercio\IRegistrarComercioDA.cs" />
+    <Compile Include="AccesoADatos\Sinpes\ObtenerSinpesPorTelefono\IObtenerSinpesPorTelefonoDA.cs" />
+    <Compile Include="AccesoADatos\Sinpes\RegistrarSinpe\IRegistrarSinpeDA.cs" />
+    <Compile Include="LogicaDeNegocio\Cajas\EditarCaja\IEditarCajaLN.cs" />
+    <Compile Include="LogicaDeNegocio\Cajas\ObtenerCajaPorTelefono\IObtenerCajaPorTelefonoLN.cs" />
+    <Compile Include="LogicaDeNegocio\Cajas\ObtenerListaDeCajasPorComercio\IObtenerListaDeCajasPorComercioLN.cs" />
+    <Compile Include="LogicaDeNegocio\Cajas\ObtenerCajaPorId\IObtenerCajaPorIdLN.cs" />
+    <Compile Include="LogicaDeNegocio\Cajas\RegistrarCaja\IRegistrarCajaLN.cs" />
+    <Compile Include="LogicaDeNegocio\Comercios\EditarComercio\IEditarComercioLN.cs" />
+    <Compile Include="LogicaDeNegocio\Comercios\ObtenerComercioPorId\IObtenerComercioPorIdLN.cs" />
+    <Compile Include="LogicaDeNegocio\Comercios\ObtenerListaDeComercios\IObtenerListaDeComerciosLN.cs" />
+    <Compile Include="LogicaDeNegocio\Comercios\RegistrarComercio\IRegistrarComercioLN.cs" />
+    <Compile Include="LogicaDeNegocio\Comunes\GestorDeFechas\IFechaLN.cs" />
+    <Compile Include="LogicaDeNegocio\Sinpes\ObtenerSinpesPorTelefono\IObtenerSinpesPorTelefonoLN.cs" />
+    <Compile Include="LogicaDeNegocio\Sinpes\RegistrarSinpe\IRegistrarSinpeLN.cs" />
+    <Compile Include="ModelosParaUI\Cajas\CajasDto.cs" />
+    <Compile Include="ModelosParaUI\Comercios\ComerciosDto.cs" />
+    <Compile Include="ModelosParaUI\Sinpes\SinpeDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

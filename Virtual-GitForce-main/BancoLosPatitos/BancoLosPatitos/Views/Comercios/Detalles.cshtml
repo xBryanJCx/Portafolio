@@ -1,0 +1,98 @@
+﻿@model BancoLosPatitos.Abstracciones.ModelosParaUI.Comercios.ComerciosDto
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>ComerciosDto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        @Html.HiddenFor(model => model.IdComercio)
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Identificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identificacion)
+        </dd>
+
+
+        <dt class="col-sm-3">Tipo de Identificación</dt>
+        <dd class="col-sm-9">
+            @(Model.TipoIdentificacion == 1 ? "Física" :
+                  Model.TipoIdentificacion == 2 ? "Jurídica" : "Desconocida")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt class="col-sm-3">Tipo de Comercio</dt>
+        <dd class="col-sm-9">
+            @(Model.TipoDeComercio == 1 ? "Restaurantes" :
+                  Model.TipoDeComercio == 2 ? "Supermercados" :
+                  Model.TipoDeComercio == 3 ? "Ferreterias" :
+                  Model.TipoDeComercio == 4 ? "Otros" : "Otro")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CorreoElectronico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CorreoElectronico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaDeRegistro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaDeRegistro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaDeModificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaDeModificacion)
+        </dd>
+
+        </dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Estado)</dt>
+        <dd class="col-sm-9 fw-bold @(Model.Estado ? "text-success" : "text-danger")">
+            @(Model.Estado ? "Activo" : "Inactivo")
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Volver a la lista", "ListaDeComercios", null, new { @class = "btn btn-outline-secondary" })
+</p>

@@ -1,0 +1,102 @@
+﻿@model IEnumerable<BancoLosPatitos.Abstracciones.ModelosParaUI.Comercios.ComerciosDto>
+
+@{
+    ViewBag.Title = "ListaDeComercios";
+}
+
+<h2>Lista De Comercios</h2>
+
+<div class="mb-3">
+    @Html.ActionLink("Registrar nuevo comercio", "RegistrarComercio", null,
+        new { @class = "btn btn-success" })
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdComercio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Identificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoIdentificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoDeComercio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CorreoElectronico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaDeRegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaDeModificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdComercio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Identificacion)
+            </td>
+            <td>
+                @(item.TipoIdentificacion == 1 ? "Física" :
+                      item.TipoIdentificacion == 2 ? "Jurídica" : "Desconocida")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @(item.TipoDeComercio == 1 ? "Restaurantes" :
+                      item.TipoDeComercio == 2 ? "Supermercados" :
+                      item.TipoDeComercio == 3 ? "Ferreterías" :
+                      item.TipoDeComercio == 4 ? "Otros": "Otro")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CorreoElectronico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaDeRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaDeModificacion)
+            </td>
+            <td class="@(item.Estado ? "text-success fw-bold" : "text-danger fw-bold")">
+                @(item.Estado ? "Activo" : "Inactivo")
+            </td>
+            <td class="text-center">
+                @Html.ActionLink("Editar", "EditarComercio", new { id = item.IdComercio }, new { @class = "btn btn-warning btn-sm me-1" })
+                @Html.ActionLink("Detalles", "Detalles", new { id = item.IdComercio }, new { @class = "btn btn-info btn-sm text-white me-1" })
+                @*@Html.ActionLink("Eliminar", "EliminarComercio", new { id = item.IdComercio }, new { @class = "btn btn-danger btn-sm me-1" })*@
+                @Html.ActionLink("Ver Cajas","ListaDeCajasPorComercio","Cajas",  new { idComercio =item.IdComercio}, new { @class = "btn btn-primary btn-sm" })
+            </td>
+
+        </tr>
+    }
+
+</table>
